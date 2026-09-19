@@ -61,3 +61,10 @@ Se generó un dataset de **1000 muestras** con `make_circles`, `noise=0.05`, `fa
 | Spectral Clustering |  1.0000 | 1.0000 |       1.0000 |     0.1125 |
 
 **Análisis:** K-Means presentó dificultades para identificar los círculos concéntricos debido a la estructura no lineal del dataset. DBSCAN y Spectral Clustering identificaron correctamente los dos grupos, obteniendo **ARI, NMI y homogeneidad de 1.0**.
+
+### D.	Determine qué modelo o modelos son de naturaleza lineal y no lineal, así como los hiper parámetros críticos para el entrenamiento exitoso
+| Modelo | Naturaleza | Justificación | Hiperparámetros críticos |
+|---|---|---|---|
+| **K-Means** | Lineal / basado en distancia | Forma clusters alrededor de centroides y funciona mejor con grupos aproximadamente convexos. | `n_clusters`, `n_init`, `random_state` |
+| **DBSCAN** | No lineal | Agrupa según densidad y puede detectar clusters con formas arbitrarias. | `eps`, `min_samples` |
+| **Spectral Clustering** | No lineal | Utiliza relaciones de vecindad y grafos para detectar estructuras complejas y no convexas. | `n_clusters`, `affinity`, `n_neighbors`, `random_state` |
